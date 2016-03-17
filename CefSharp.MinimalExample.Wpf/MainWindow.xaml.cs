@@ -8,5 +8,15 @@ namespace CefSharp.MinimalExample.Wpf
         {
             InitializeComponent();
         }
+
+        private void OpenWebBrowser_OnClick(object sender, RoutedEventArgs e)
+        {
+            var webBrowserView = ScreenPlaceholder.Content as WebBrowserView;
+            if (webBrowserView != null)
+            {
+                webBrowserView.Browser.Dispose();
+            }
+            ScreenPlaceholder.Content = new WebBrowserView();
+        }
     }
 }
